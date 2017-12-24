@@ -76,10 +76,10 @@ app.config(function($routeProvider)
 
 .controller("pepeController", function ($http, $scope, $interval, $timeout, $rootScope) {
 
-	var ponies;
+	var pepes;
 
 	$http.get("?controller=pepe").success(function (data) {
-		ponies = data;
+		pepes = data;
 		$scope.next();
 	});
 
@@ -134,12 +134,12 @@ app.config(function($routeProvider)
 
 	$scope.next = function () {
 
-		if (current < ponies.length)
+		if (current < pepes.length)
 		{
-			$scope.power = ponies[current].power;
+			$scope.power = pepes[current].power;
 			$rootScope.currentPower = $scope.power;
-			$scope.speed = ponies[current].speed;
-			$scope.image = ponies[current].image;
+			$scope.speed = pepes[current].speed;
+			$scope.image = pepes[current].image;
 
 			current++;
 
